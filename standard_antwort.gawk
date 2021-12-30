@@ -1,5 +1,12 @@
-function standard_antwort(){
-  print "HTTP/1.1 200 OK"
-  print "Server: Gawk-Webserver"
-  print "Connection: close"
+
+
+
+function standard_antwort( laenge){
+  http_greeting = "HTTP/1.1 200 OK"
+  server_info = "Server: Gawk-Webserver" 
+  connection_info = "Connection: close"
+  content_length = "Content-Length: "laenge
+  print http_greeting |& HttpServer
+  print server_info |& HttpServer
+  print  |& HttpServer
 }
